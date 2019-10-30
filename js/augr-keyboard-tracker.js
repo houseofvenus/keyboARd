@@ -870,7 +870,46 @@ Leap.loop({background: true}, {
 
         if(hand.indexFinger.extended){
             let indexPos = hand.indexFinger.distal.center();
-            if(indexPos[0]>95&&indexPos[0]<115&&indexPos[1]>195&&indexPos[1]<220){
+            if(indexPos[0]>120&&indexPos[0]<155&&indexPos[1]>195&&indexPos[1]<220){
+              //console.log("delete");
+              sessionManager.pressed.push("delete", sessionManager.pressCount);
+              if(sessionManager.pressed.indexOf("delete")>-1){
+                  document.getElementById("system-delete-container").setAttribute("material", "color", "white");
+                  document.getElementById("system-delete-container").setAttribute("text", "color", "black");
+                  console.log("holding down delete");
+                  if(sessionManager.pressCount==null){
+                    sessionManager.pressCount = -1;
+                  }
+                  else if(sessionManager.pressCount >= -1){
+                    sessionManager.pressCount++;
+                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){ /* approximately 25 cycles per 1000 ms */
+                      console.log("pressed delete");
+                      document.getElementById("system-delete-container").setAttribute("material", "color", "red");
+                      document.getElementById("system-delete-container").setAttribute("text", "color", "white");
+                      if(sessionManager.pressCount==26){
+                        if(sessionManager.outputTextStream.length>0){
+                            sessionManager.outputTextStream.pop();
+                        }
+                        let textStream = ""
+                        for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
+                            (function(){
+                              textStream+=sessionManager.outputTextStream[streamSize];
+                            })();
+                        }
+                        document.getElementById("output-display-container").setAttribute("text", "value", textStream);
+                      }
+                    }
+                    if(sessionManager.pressCount>75){
+                      console.log("long pressed P");
+                      document.getElementById("letter-p-container").setAttribute("material", "color", "orange");
+                      document.getElementById("letter-p-container").setAttribute("text", "color", "black");
+
+                    }
+                  }
+              }
+
+            }
+            else if(indexPos[0]>95&&indexPos[0]<115&&indexPos[1]>195&&indexPos[1]<220){
               //console.log("P");
               sessionManager.pressed.push("P", sessionManager.pressCount);
               if(sessionManager.pressed.indexOf("P")>-1){
@@ -2325,7 +2364,7 @@ Leap.loop({background: true}, {
               }
             }
             else{
-              console.log(indexPos[1]);
+              console.log(indexPos[0]);
               if(sessionManager.pressed.length>0){
                 sessionManager.pressed = [];
                 sessionManager.pressCount = -1;
@@ -2348,7 +2387,6 @@ Leap.loop({background: true}, {
             *
             */
         }
-
 
         renderer.render(scene, camera);
 }})

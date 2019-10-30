@@ -5,9 +5,12 @@
 #  MOTIVATION
 
 #  BUILD STATUS
-v 0.1.0
+v 0.3.0
 
 mercredi 30/10/19
+1708
+incorporated delete button
+module ~80% towards production
 
 #  CODE STYLE
 

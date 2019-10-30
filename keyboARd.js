@@ -1,6 +1,6 @@
 // author(s):  Patrice-Morgan Ongoly
-// version: 0.2.2
-// last modified: Monday, July 2, 2018 12:32 EST
+// version: 0.3.0
+// last modified: Wednesday, October 30, 2019 17:08 EST
 // description:
 
 // required modules
