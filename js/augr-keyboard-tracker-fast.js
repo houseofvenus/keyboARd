@@ -14,7 +14,8 @@ var sessionManager = {
     pressed: null,
     statusShown: false,
     screenCount: 1,
-    outputTextStream: []
+    outputTextStream: [],
+    outputDisplayContainerVisible: true
 };
 
 var objectManager = {
@@ -882,11 +883,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){ /* approximately 25 cycles per 1000 ms */
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){ /* approximately 25 cycles per 1000 ms */
                       console.log("pressed delete");
                       document.getElementById("system-delete-container").setAttribute("material", "color", "red");
                       document.getElementById("system-delete-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         if(sessionManager.outputTextStream.length>0){
                             sessionManager.outputTextStream.pop();
                         }
@@ -899,7 +900,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed P");
                       document.getElementById("letter-p-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-p-container").setAttribute("text", "color", "black");
@@ -921,11 +922,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){ /* approximately 25 cycles per 1000 ms */
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){ /* approximately 25 cycles per 1000 ms */
                       console.log("pressed P");
                       document.getElementById("letter-p-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-p-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("P");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -936,7 +937,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed P");
                       document.getElementById("letter-p-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-p-container").setAttribute("text", "color", "black");
@@ -958,11 +959,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed O");
                       document.getElementById("letter-o-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-o-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("O");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -973,7 +974,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed O");
                       document.getElementById("letter-o-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-o-container").setAttribute("text", "color", "black");
@@ -993,11 +994,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed I");
                       document.getElementById("letter-i-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-i-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("I");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1008,7 +1009,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed I");
                       document.getElementById("letter-i-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-i-container").setAttribute("text", "color", "black");
@@ -1028,11 +1029,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed U");
                       document.getElementById("letter-u-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-u-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("U");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1043,7 +1044,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed U");
                       document.getElementById("letter-u-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-u-container").setAttribute("text", "color", "black");
@@ -1063,11 +1064,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed Y");
                       document.getElementById("letter-y-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-y-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("Y");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1078,7 +1079,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed Y");
                       document.getElementById("letter-y-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-y-container").setAttribute("text", "color", "black");
@@ -1098,11 +1099,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed T");
                       document.getElementById("letter-t-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-t-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("T");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1113,7 +1114,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed T");
                       document.getElementById("letter-t-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-t-container").setAttribute("text", "color", "black");
@@ -1133,11 +1134,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed R");
                       document.getElementById("letter-r-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-r-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("R");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1148,7 +1149,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed R");
                       document.getElementById("letter-r-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-r-container").setAttribute("text", "color", "black");
@@ -1168,11 +1169,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed E");
                       document.getElementById("letter-e-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-e-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("E");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1183,7 +1184,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed E");
                       document.getElementById("letter-e-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-e-container").setAttribute("text", "color", "black");
@@ -1203,11 +1204,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed W");
                       document.getElementById("letter-w-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-w-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("W");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1218,7 +1219,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed W");
                       document.getElementById("letter-w-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-w-container").setAttribute("text", "color", "black");
@@ -1238,11 +1239,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed Q");
                       document.getElementById("letter-q-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-q-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("Q");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1253,7 +1254,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed Q");
                       document.getElementById("letter-q-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-q-container").setAttribute("text", "color", "black");
@@ -1273,15 +1274,15 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed tab");
                       document.getElementById("system-tab-container").setAttribute("material", "color", "red");
                       document.getElementById("system-tab-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("tab");
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed tab");
                       document.getElementById("system-tab-container").setAttribute("material", "color", "orange");
                       document.getElementById("system-tab-container").setAttribute("text", "color", "black");
@@ -1301,12 +1302,12 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed :");
 
                       document.getElementById("punctuation-colon-container").setAttribute("material", "color", "red");
                       document.getElementById("punctuation-colon-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push(":");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1317,7 +1318,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed :");
                       document.getElementById("punctuation-colon-container").setAttribute("material", "color", "orange");
                       document.getElementById("punctuation-colon-container").setAttribute("text", "color", "black");
@@ -1338,11 +1339,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed L");
                       document.getElementById("letter-l-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-l-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("L");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1353,7 +1354,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed L");
                       document.getElementById("letter-l-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-l-container").setAttribute("text", "color", "black");
@@ -1373,11 +1374,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed K");
                       document.getElementById("letter-k-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-k-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("K");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1388,7 +1389,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed K");
                       document.getElementById("letter-k-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-k-container").setAttribute("text", "color", "black");
@@ -1408,11 +1409,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed J");
                       document.getElementById("letter-j-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-j-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("J");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1423,7 +1424,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed J");
                       document.getElementById("letter-j-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-j-container").setAttribute("text", "color", "black");
@@ -1443,11 +1444,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed H");
                       document.getElementById("letter-h-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-h-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("H");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1458,7 +1459,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed H");
                       document.getElementById("letter-h-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-h-container").setAttribute("text", "color", "black");
@@ -1478,11 +1479,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed G");
                       document.getElementById("letter-g-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-g-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("G");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1493,7 +1494,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed G");
                       document.getElementById("letter-g-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-g-container").setAttribute("text", "color", "black");
@@ -1513,11 +1514,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed F");
                       document.getElementById("letter-f-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-f-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("F");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1528,7 +1529,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed F");
                       document.getElementById("letter-f-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-f-container").setAttribute("text", "color", "black");
@@ -1548,11 +1549,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed D");
                       document.getElementById("letter-d-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-d-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("D");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1563,7 +1564,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed D");
                       document.getElementById("letter-d-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-d-container").setAttribute("text", "color", "black");
@@ -1583,11 +1584,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed S");
                       document.getElementById("letter-s-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-s-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("S");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1598,7 +1599,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed S");
                       document.getElementById("letter-s-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-s-container").setAttribute("text", "color", "black");
@@ -1618,11 +1619,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed A");
                       document.getElementById("letter-a-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-a-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("A");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1633,7 +1634,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed A");
                       document.getElementById("letter-a-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-a-container").setAttribute("text", "color", "black");
@@ -1653,15 +1654,15 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed caps lock");
                       document.getElementById("system-capslock-container").setAttribute("material", "color", "red");
                       document.getElementById("system-capslock-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         console.log("caps lock effect");
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed caps lock");
                       document.getElementById("system-capslock-container").setAttribute("material", "color", "orange");
                       document.getElementById("system-capslock-container").setAttribute("text", "color", "black");
@@ -1681,11 +1682,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed ?");
                       document.getElementById("punctuation-question-container").setAttribute("material", "color", "red");
                       document.getElementById("punctuation-question-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("?");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1696,7 +1697,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed ?");
                       document.getElementById("punctuation-question-container").setAttribute("material", "color", "orange");
                       document.getElementById("punctuation-question-container").setAttribute("text", "color", "black");
@@ -1717,11 +1718,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed >|.");
                       document.getElementById("symbol-greaterthan-container").setAttribute("material", "color", "red");
                       document.getElementById("symbol-greaterthan-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push(">");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1732,7 +1733,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed >|.");
                       document.getElementById("symbol-greaterthan-container").setAttribute("material", "color", "orange");
                       document.getElementById("symbol-greaterthan-container").setAttribute("text", "color", "black");
@@ -1752,11 +1753,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed <|,");
                       document.getElementById("symbol-lessthan-container").setAttribute("material", "color", "red");
                       document.getElementById("symbol-lessthan-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("<");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1767,7 +1768,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed <|,");
                       document.getElementById("symbol-lessthan-container").setAttribute("material", "color", "orange");
                       document.getElementById("symbol-lessthan-container").setAttribute("text", "color", "black");
@@ -1787,11 +1788,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed M");
                       document.getElementById("letter-m-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-m-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("M");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1802,7 +1803,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed M");
                       document.getElementById("letter-m-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-m-container").setAttribute("text", "color", "black");
@@ -1822,11 +1823,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed N");
                       document.getElementById("letter-n-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-n-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("N");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1837,7 +1838,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed N");
                       document.getElementById("letter-n-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-n-container").setAttribute("text", "color", "black");
@@ -1857,11 +1858,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed B");
                       document.getElementById("letter-b-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-b-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("B");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1872,7 +1873,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed B");
                       document.getElementById("letter-b-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-b-container").setAttribute("text", "color", "black");
@@ -1892,11 +1893,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed V");
                       document.getElementById("letter-v-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-v-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("V");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1907,7 +1908,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed V");
                       document.getElementById("letter-v-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-v-container").setAttribute("text", "color", "black");
@@ -1927,11 +1928,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed C");
                       document.getElementById("letter-c-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-c-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("C");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1942,7 +1943,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed C");
                       document.getElementById("letter-c-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-c-container").setAttribute("text", "color", "black");
@@ -1962,11 +1963,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed X");
                       document.getElementById("letter-x-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-x-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("X");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -1977,7 +1978,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed X");
                       document.getElementById("letter-x-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-x-container").setAttribute("text", "color", "black");
@@ -1997,11 +1998,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed Z");
                       document.getElementById("letter-z-container").setAttribute("material", "color", "red");
                       document.getElementById("letter-z-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push("Z");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -2012,7 +2013,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed Z");
                       document.getElementById("letter-z-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-z-container").setAttribute("text", "color", "black");
@@ -2032,15 +2033,15 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed shift");
                       document.getElementById("system-leftshift-container").setAttribute("material", "color", "red");
                       document.getElementById("system-leftshift-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         console.log("shift effect!")
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed shift");
                       document.getElementById("system-leftshift-container").setAttribute("material", "color", "orange");
                       document.getElementById("system-leftshift-container").setAttribute("text", "color", "black");
@@ -2060,15 +2061,15 @@ Leap.loop({background: true}, {
                     }
                     else if(sessionManager.pressCount >= -1){
                       sessionManager.pressCount++;
-                      if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                      if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                         console.log("pressed RD");
                         document.getElementById("dpad-right-container").setAttribute("material", "color", "red");
                         document.getElementById("dpad-right-container").setAttribute("text", "color", "white");
-                        if(sessionManager.pressCount==26){
+                        if(sessionManager.pressCount==16){
                           console.log("dpad right effect!")
                         }
                       }
-                      if(sessionManager.pressCount>75){
+                      if(sessionManager.pressCount>45){
                         console.log("long pressed RD");
                         document.getElementById("dpad-right-container").setAttribute("material", "color", "orange");
                         document.getElementById("dpad-right-container").setAttribute("text", "color", "black");
@@ -2088,15 +2089,15 @@ Leap.loop({background: true}, {
                     }
                     else if(sessionManager.pressCount >= -1){
                       sessionManager.pressCount++;
-                      if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                      if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                         console.log("pressed DD");
                         document.getElementById("dpad-down-container").setAttribute("material", "color", "red");
                         document.getElementById("dpad-down-container").setAttribute("text", "color", "white");
-                        if(sessionManager.pressCount==26){
+                        if(sessionManager.pressCount==16){
                           console.log("dpad down effect!")
                         }
                       }
-                      if(sessionManager.pressCount>75){
+                      if(sessionManager.pressCount>45){
                         console.log("long pressed DD");
                         document.getElementById("dpad-down-container").setAttribute("material", "color", "orange");
                         document.getElementById("dpad-down-container").setAttribute("text", "color", "black");
@@ -2116,15 +2117,15 @@ Leap.loop({background: true}, {
                     }
                     else if(sessionManager.pressCount >= -1){
                       sessionManager.pressCount++;
-                      if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                      if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                         console.log("pressed UD");
                         document.getElementById("dpad-up-container").setAttribute("material", "color", "red");
                         document.getElementById("dpad-up-container").setAttribute("text", "color", "white");
-                        if(sessionManager.pressCount==26){
+                        if(sessionManager.pressCount==16){
                           console.log("dpad up effect!")
                         }
                       }
-                      if(sessionManager.pressCount>75){
+                      if(sessionManager.pressCount>45){
                         console.log("long pressed UD");
                         document.getElementById("dpad-up-container").setAttribute("material", "color", "orange");
                         document.getElementById("dpad-up-container").setAttribute("text", "color", "black");
@@ -2144,15 +2145,15 @@ Leap.loop({background: true}, {
                     }
                     else if(sessionManager.pressCount >= -1){
                       sessionManager.pressCount++;
-                      if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                      if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                         console.log("pressed LD");
                         document.getElementById("dpad-left-container").setAttribute("material", "color", "red");
                         document.getElementById("dpad-left-container").setAttribute("text", "color", "white");
-                        if(sessionManager.pressCount==26){
+                        if(sessionManager.pressCount==16){
                           console.log("dpad left effect!")
                         }
                       }
-                      if(sessionManager.pressCount>75){
+                      if(sessionManager.pressCount>45){
                         console.log("long pressed LD");
                         document.getElementById("dpad-left-container").setAttribute("material", "color", "orange");
                         document.getElementById("dpad-left-container").setAttribute("text", "color", "black");
@@ -2172,15 +2173,15 @@ Leap.loop({background: true}, {
                     }
                     else if(sessionManager.pressCount >= -1){
                       sessionManager.pressCount++;
-                      if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                      if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                         console.log("pressed ROPT");
                         document.getElementById("system-rightoption-container").setAttribute("material", "color", "red");
                         document.getElementById("system-rightoption-container").setAttribute("text", "color", "white");
-                        if(sessionManager.pressCount==26){
+                        if(sessionManager.pressCount==16){
                           console.log("right option effect!")
                         }
                       }
-                      if(sessionManager.pressCount>75){
+                      if(sessionManager.pressCount>45){
                         console.log("long pressed ROPT");
                         document.getElementById("system-rightoption-container").setAttribute("material", "color", "orange");
                         document.getElementById("system-rightoption-container").setAttribute("text", "color", "black");
@@ -2200,15 +2201,15 @@ Leap.loop({background: true}, {
                     }
                     else if(sessionManager.pressCount >= -1){
                       sessionManager.pressCount++;
-                      if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                      if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                         console.log("pressed RCMD");
                         document.getElementById("system-rightcommand-container").setAttribute("material", "color", "red");
                         document.getElementById("system-rightcommand-container").setAttribute("text", "color", "white");
-                        if(sessionManager.pressCount==26){
+                        if(sessionManager.pressCount==16){
                           console.log("right command effect!")
                         }
                       }
-                      if(sessionManager.pressCount>75){
+                      if(sessionManager.pressCount>45){
                         console.log("long pressed RCMD");
                         document.getElementById("system-rightcommand-container").setAttribute("material", "color", "orange");
                         document.getElementById("system-rightcommand-container").setAttribute("text", "color", "black");
@@ -2228,11 +2229,11 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed SPCE");
                       document.getElementById("space-bar-container").setAttribute("material", "color", "red");
                       document.getElementById("space-bar-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         sessionManager.outputTextStream.push(" ");
                         let textStream = ""
                         for(var streamSize = 0; streamSize<sessionManager.outputTextStream.length;streamSize++){
@@ -2243,7 +2244,7 @@ Leap.loop({background: true}, {
                         document.getElementById("output-display-container").setAttribute("text", "value", textStream);
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed SPCE");
                       document.getElementById("letter-q-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-q-container").setAttribute("text", "color", "black");
@@ -2263,15 +2264,15 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed CMD");
                       document.getElementById("system-leftcommand-container").setAttribute("material", "color", "red");
                       document.getElementById("system-leftcommand-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         console.log("left command effect!")
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed CMD");
                       document.getElementById("letter-q-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-q-container").setAttribute("text", "color", "black");
@@ -2291,15 +2292,15 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed OPTION");
                       document.getElementById("system-leftoption-container").setAttribute("material", "color", "red");
                       document.getElementById("system-leftoption-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         console.log("left option effect!")
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed OPTION");
                       document.getElementById("letter-q-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-q-container").setAttribute("text", "color", "black");
@@ -2319,15 +2320,15 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed CTRL");
                       document.getElementById("system-leftcontrol-container").setAttribute("material", "color", "red");
                       document.getElementById("system-leftcontrol-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         console.log("left control effect!")
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed CTRL");
                       document.getElementById("letter-q-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-q-container").setAttribute("text", "color", "black");
@@ -2347,15 +2348,15 @@ Leap.loop({background: true}, {
                   }
                   else if(sessionManager.pressCount >= -1){
                     sessionManager.pressCount++;
-                    if(sessionManager.pressCount>25&&sessionManager.pressCount<75){
+                    if(sessionManager.pressCount>15&&sessionManager.pressCount<45){
                       console.log("pressed FN");
                       document.getElementById("system-function-container").setAttribute("material", "color", "red");
                       document.getElementById("system-function-container").setAttribute("text", "color", "white");
-                      if(sessionManager.pressCount==26){
+                      if(sessionManager.pressCount==16){
                         console.log("function effect!")
                       }
                     }
-                    if(sessionManager.pressCount>75){
+                    if(sessionManager.pressCount>45){
                       console.log("long pressed FN");
                       document.getElementById("letter-q-container").setAttribute("material", "color", "orange");
                       document.getElementById("letter-q-container").setAttribute("text", "color", "black");
@@ -2390,8 +2391,8 @@ Leap.loop({background: true}, {
               console.log("export as TXT");
             }
             else{
-              // 150 - 170
-              console.log(indexPos[0]);
+              //
+            //  console.log(indexPos[1]);
               if(sessionManager.pressed.length>0){
                 sessionManager.pressed = [];
                 sessionManager.pressCount = -1;
